@@ -5,3 +5,7 @@
 @tailwind utilities;
 
 /* Custom css */
+
+.radial-bg {
+    background: radial-gradient(ellipse 50% 50% at 50% 40%, rgba(249, 176, 133, 0.8) 1px, rgba(255, 253, 252, 1) 100%, rgba(255, 253, 252, 1) 100%);
+}
