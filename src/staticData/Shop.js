@@ -7,7 +7,7 @@ const shopdata = {
   },
   sortOptions: [
     {
-      label: 'default',
+      label: 'Default Sort',
       value: 'default',
     },
     {

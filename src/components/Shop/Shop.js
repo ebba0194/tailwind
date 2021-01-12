@@ -10,26 +10,47 @@ import ProductTile from './components/ProductTile';
 const Shop = ({
   shopData: {
     title,
-    // resultCount,
-    // sortOptions,
+    resultCount,
+    sortOptions,
     breadcrumbs,
     products,
   },
 }) => (
   <div className="grid grid-row-auto">
     <div className="grid grid-cols-1">
-      <div className="bg-lightningYellow h-96 shadow-lg my-16 rounded-lg p-8">
+      <div className="bg-gradient-to-r from-lightningYellow via-treePoppy to-goldenTainoi h-96 shadow-lg my-8 rounded-lg p-8 pt-16">
         <div className="grid grid-cols-3 items-center">
           <div className="font-bold">
             {breadcrumbs.map(({ link, label }, i) => (
               <Fragment key={`${link}-${label}`}>
                 {i > 0 && (<span>/</span>)}
-                <a href={link} className="p-2 hover:text-eggWhite">{label}</a>
+                <a href={link} className={`${i === 0 && 'text-eggWhite'} p-2 hover:text-eggWhite`}>
+                  {label}
+                </a>
               </Fragment>
             ))}
           </div>
-          <div className="text-center text-3xl font-bold">{title}</div>
-          <div className="text-right ">sort</div>
+          <div className="text-center text-4xl font-bold">{title}</div>
+          <div className="flex justify-end items-center">
+            <span className="px-8 font-bold">
+              Showing
+              {' '}
+              {resultCount.start}
+              -
+              {resultCount.end}
+              {' '}
+              of
+              {' '}
+              {resultCount.total}
+            </span>
+            <span>
+              <select className="rounded p-3 bg-opacity-50 font-bold bg-eggWhite shadow-sm">
+                {sortOptions.map(({ label, value }) => (
+                  <option value={value}>{label}</option>
+                ))}
+              </select>
+            </span>
+          </div>
         </div>
       </div>
     </div>
