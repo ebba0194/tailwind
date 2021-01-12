@@ -18,7 +18,7 @@ const Shop = ({
 }) => (
   <div className="grid grid-row-auto">
     <div className="grid grid-cols-1">
-      <div className="bg-gradient-to-r from-lightningYellow via-treePoppy to-goldenTainoi h-96 shadow-lg my-8 rounded-lg p-8 pt-16">
+      <div className="bg-gradient-to-r from-lightningYellow via-treePoppy to-goldenTainoi h-96 shadow-lg my-8 rounded-lg p-12 pt-16">
         <div className="grid grid-cols-3 items-center">
           <div className="font-bold">
             {breadcrumbs.map(({ link, label }, i) => (
@@ -54,7 +54,7 @@ const Shop = ({
         </div>
       </div>
     </div>
-    <div className="grid grid-cols-3 -mt-80">
+    <div className="grid grid-cols-3 -mt-80 pt-8">
       {products.map((product) => (
         <Fragment key={product.id}>
           <ProductTile product={product} />
